@@ -1,0 +1,24 @@
+<%- include('./layout/head') %>
+    <h3>Listagem</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let key in contacts) { %>
+        <tr>
+          <td><%=contacts[key].name%></td>
+          <td><%=contacts[key].email%></td>
+          <td>
+            <a href="/view/<%=key%>" class="btn">Ver</a>
+          </td>
+        </tr>
+        <% }; %>
+      </tbody>
+    </table>
+    <p><a href="/new" class="btn">Novo</a></p>
+<%- include('./layout/footer') %>
